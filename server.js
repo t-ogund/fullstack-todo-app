@@ -1,10 +1,10 @@
-const dotenv = require('dotenv').config();
+const path = require('path');
+const dotenv = require('dotenv').config({path:__dirname+'/.env'});
 const { urlencoded } = require('express');
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3000;
-const path = require('path');
 const Todo = require('./models/todo-model');
 const Mode = require('./models/mode-model');
 
