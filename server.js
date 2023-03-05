@@ -1,3 +1,4 @@
+const dotenv = require('dotenv').config();
 const { urlencoded } = require('express');
 const express = require('express');
 const mongoose = require('mongoose');
@@ -6,8 +7,6 @@ const PORT = process.env.PORT || 3000;
 const path = require('path');
 const Todo = require('./models/todo-model');
 const Mode = require('./models/mode-model');
-const dotenv = require('dotenv').config();
-
 
 app.use(express.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
