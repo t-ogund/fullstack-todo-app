@@ -1,0 +1,238 @@
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    position: relative;
+    margin: 0;
+}
+
+.day-background-banner {
+    background-image: url('/assets/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+}
+
+.night-background-banner {
+    background-image: url('/assets/bg-desktop-dark.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+}
+
+#day-night-toggle:hover {
+    cursor: pointer;
+}
+
+#content-container {
+    max-width: 540px;
+    min-width: 327px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 70px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+#form-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+#form-header h1 {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 10px;
+}
+
+#button-container {
+    background-color: white;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#submit {
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
+
+#submit:hover {
+    cursor: pointer;
+}
+
+#new-todo {
+    width: 100%;
+    padding: 1rem 0 1rem 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.todo-container {
+    display: flex;
+    /* width: 400px; */
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    margin: 0;
+    padding: 1rem;
+    background-color: white;
+}
+
+#todo-section {
+    width: 100%;
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+li:hover, .delete-button {
+    cursor: pointer;
+}
+
+form {
+    margin-bottom: .5rem;
+    display: flex;
+    border: 1px solid gray;
+}
+
+input {
+    padding: .5rem 2rem;
+    width: 400px;
+    border: none;
+}
+
+h1, #form {
+    text-align: center;
+}
+
+.delete-button {
+    padding: .5rem;
+}
+
+.completed-delete-button {
+    margin-right: 2rem;
+    padding: .5rem;
+    border-radius: 50%;
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.status-incomplete {
+    height: 25px;
+    width: 25px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-incomplete:hover {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.status-complete {
+    height: 25px;
+    width: 25px;
+    border: none;
+    border-radius: 50%;
+    margin-right: 1rem;
+    background-image: linear-gradient(to right, hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-item, .todo-item-completed {
+    display: flex;
+    align-items: center;
+}
+
+ul li:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin: 0;
+}
+
+.completed {
+    text-decoration: line-through;
+    font-style: italic;
+    color: gray;
+}
+
+footer {
+    display: flex;
+    background-color: white;
+    padding: 1rem 4.2rem;
+    justify-content: space-between;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; 
+}
+
+footer > div {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+h6 {
+    margin: auto auto;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+#all-button, #active-button, #completed-button, #clear-button {
+    background-color: white;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+}
+
+#all-button:hover, #active-button:hover, #completed-button:hover, #clear-button:hover {
+    cursor: pointer;
+}
+
+.highlight {
+    color: blue;
+}

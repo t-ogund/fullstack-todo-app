@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Productivity App</title>
+</head>
+<body id="body">
+    <header class="background-banner day-background-banner">
+
+    </header>
+    <section id="content-container">
+        <section id="form-section">
+            <div id="form-header">
+                <h1>TODO</h1>
+                <div id="day-night-toggle">
+                    <svg id="day-mode" xmlns="http://www.w3.org/2000/svg" width="26" height="26"><path fill="#FFF" fill-rule="evenodd" d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z"/></svg>
+                    <svg id="night-mode" class="hide" xmlns="http://www.w3.org/2000/svg" width="26" height="26"><path fill="#FFF" fill-rule="evenodd" d="M13 21a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-5.657-2.343a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414-1.414l2.12-2.121a1 1 0 011.415 0zm12.728 0l2.121 2.121a1 1 0 01-1.414 1.414l-2.121-2.12a1 1 0 011.414-1.415zM13 8a5 5 0 110 10 5 5 0 010-10zm12 4a1 1 0 110 2h-3a1 1 0 110-2h3zM4 12a1 1 0 110 2H1a1 1 0 110-2h3zm18.192-8.192a1 1 0 010 1.414l-2.12 2.121a1 1 0 01-1.415-1.414l2.121-2.121a1 1 0 011.414 0zm-16.97 0l2.121 2.12A1 1 0 015.93 7.344L3.808 5.222a1 1 0 011.414-1.414zM13 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1z"/></svg>
+                </div>
+            </div>
+            <form action="/new-todo" method="POST" id="form">
+                <div id="button-container">
+                    <button id="submit"></button>
+                </div>
+                <input type="text" name="newTodo" placeholder="Create a new todo" id="new-todo">
+            </form>
+            
+        </section>
+        <section id="todo-section">
+            <ul>
+                <% for (let i = 0; i < newTodo.length; i++) { %>
+                   <% if (newTodo[i].completed === true) { %>
+                        <li class="todo-container">
+                            <div class="status-complete" data-id=<%= newTodo[i]._id %>>
+                                <svg class="check" xmlns="http://www.w3.org/2000/svg" width="11" height="9"><path fill="none" stroke="#FFF" stroke-width="2" d="M1 4.304L3.696 7l6-6"/></svg>
+                            </div><span class="todo-item completed" data-id=<%= newTodo[i]._id %>><%= newTodo[i].newTodo %></span>
+                            <svg class="delete-button" data-id=<%= newTodo[i]._id %> style="margin-left: auto;" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg>
+                        </li> 
+                   <% } else { %>
+                        <li class="todo-container">
+                            <div class="status-incomplete" data-id=<%= newTodo[i]._id %>>
+                            </div><span class="todo-item" data-id=<%= newTodo[i]._id %>><%= newTodo[i].newTodo %></span>
+                            <svg class="delete-button" data-id=<%= newTodo[i]._id %> style="margin-left: auto;" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg>
+                        </li>
+                    <%}%>
+                    
+                <% } %>
+            </ul>
+           
+        </section>
+        <footer>
+            <h6><%= newTodo.length %> items left</h6>
+            <div>
+                <button id="all-button">All</button>
+                <button id="active-button">Active</button>
+                <button id="completed-button">Completed</button>
+            </div>
+            <button id="clear-button">Clear Completed</button>
+        </footer>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
